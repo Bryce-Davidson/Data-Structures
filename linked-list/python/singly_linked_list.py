@@ -28,7 +28,7 @@ class SinglyLinkedList:
     def __str__(self):
         s = "["
         curNode = self.head
-        while curNode != None:
+        while curNode:
             s += str(curNode.data)
             if curNode.next:
                 s += ", "
