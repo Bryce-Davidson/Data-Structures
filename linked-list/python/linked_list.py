@@ -11,27 +11,28 @@ class LinkedList:
     def __init__(self):
         super().__init__()
         self.head = None
+        self.tail = None
         self.size = 0
 
-    def insert(self, data):
-        if(not self.head):
-            self.head = Node(data)
+    def append(self, data):
+        newNode = Node(data)
+        if self.size == 0:
+            self.head = newNode
+            self.tail = newNode
             self.size += 1
             return
-        curNode = self.head
-        for i in range(self.size):
-            if(not curNode.next):
-                curNode.next = Node(data)
-            curNode = curNode.next
-        self.size +=1
+        else:
+            self.tail.next = newNode
+            self.tail = newNode
+            return
     
     def __str__(self):
         s = "["
         curNode = self.head
-        for i in range(self.size):
+        while curNode != None:
             s += str(curNode.data)
-            if i != self.size-1:
-                s += ","
+            if curNode.next:
+                s += ", "
             curNode = curNode.next
         s += "]"
         return s
