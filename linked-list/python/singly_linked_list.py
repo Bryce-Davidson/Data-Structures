@@ -11,26 +11,19 @@ class SinglyLinkedList:
     def __init__(self):
         super().__init__()
         self.head = None
-        self.tail = None
-        self.size = 0
 
     def append(self, data):
         newNode = Node(data)
-        if self.size == 0:
+        if not self.head:
             self.head = newNode
-            self.tail = newNode
-        else:
-            self.tail.next = newNode
-            self.tail = newNode
-        self.size += 1
+            return
+        curNode = self.head
+        while curNode.next:
+            curNode = curNode.next
+        curNode.next = newNode
 
     def push(self, data):
-        newNode = Node(data)
-        newNode.next = self.head
-        self.head = newNode
-        if self.size == 0:
-            self.tail = newNode
-        self.size += 1
+        return
 
     def __str__(self):
         s = "["
@@ -77,8 +70,8 @@ def push_append_test():
 
 def main():
     append_test()
-    push_test()
-    push_append_test()
+    # push_test()
+    # push_append_test()
 
 if __name__ == '__main__':
     main()
