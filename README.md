@@ -1,2 +1,2 @@
 # Data-Structures
-A repository of data structures for C++ and python.
+A repository of data structures for Java and Python.
