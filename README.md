@@ -6,12 +6,12 @@ A repository of data structures for Java and Python.
 
 Table of contents for the resources used in this repository. Big thanks to all!
 
-### [Lists](Lists/README.md)
+### General
 
-- [Wikipedia - List ADT][2]
-- [FreeCodeCamp][1]
-- [Lucas Magnum: Linked List ADT/Datastructure - Medium][3]
+- [Wikipedia - Abstract Data Type][1]
+- [Big-O Cheat Sheet][2]
+- [Algorithms & Data Structures Sheets][3]
 
-[1]: https://www.youtube.com/watch?v=RBSGKlAvoiM&t=364s
-[2]: https://en.wikipedia.org/wiki/List_(abstract_data_type)
-[3]: https://bit.ly/3sKxELR
+[1]: https://www.bigocheatsheet.com/
+[2]: https://en.wikipedia.org/wiki/Abstract_data_type
+[3]: https://cooervo.github.io/Algorithms-DataStructures-BigONotation/index.html
