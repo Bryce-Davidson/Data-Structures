@@ -4,7 +4,7 @@ These Java and Python implementations of the ADT *(abstract data type)* **List**
 
 Along with these standards, each list ADT implementation will have extra operations defined specifically for the type of implementation.
 
-## Each Implementation of List ADT
+## Each Implementation of List
 
 - [x] a constructor for creating an empty list
 - [x] an operation for testing whether or not a list is empty
@@ -16,9 +16,9 @@ Along with these standards, each list ADT implementation will have extra operati
 
 ## Implementations
 
----
-
 Below are the extra operations defined on each specific implementation of the List ADT.
+
+---
 
 ### Linked Lists
 
