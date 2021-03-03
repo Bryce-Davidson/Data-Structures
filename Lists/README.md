@@ -18,8 +18,6 @@ Along with these standards, each list ADT implementation will have extra operati
 
 Below are the extra operations defined on each specific implementation of the List ADT.
 
----
-
 ### Linked Lists
 
 - Singly-Linked-List
