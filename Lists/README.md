@@ -1,6 +1,6 @@
 # Description
 
-These Java and Python implementations of the ADT *(abstract data type)* **List**, are written to the standards shown on the wikipedia page linked below.
+These Java and Python implementations of the ADT *(abstract data type)* **List**, are written to the standards shown on the wikipedia page below.
 
 ## Each Implementation of List
 
