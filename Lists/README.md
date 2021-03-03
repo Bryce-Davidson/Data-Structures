@@ -16,22 +16,38 @@ Along with these standards, each list ADT implementation will have extra operati
 
 ## Implementations
 
+---
+
 Below are the extra operations defined on each specific implementation of the List ADT.
 
-### Linked List
+### Linked Lists
+
+- Singly-Linked-List
+- Doubly-Linked-List
+- Circular-Linked-List
+
+---
 
 - [x] Find by value
+- [x] Update by index
+- [x] Update by value
 - [x] Remove at beggining
 - [x] Remove at end
 - [x] Remove at index
 - [x] Remove by value
+- [x] Reversal of list
 
-## Resources
+#### Resources
+
+- [Linked List - After Academy][4]
+- [Lucas Magnum: Linked List ADT/Datastructure - Medium][3]
+
+## Global Resources
 
 - [Wikipedia - List ADT][2]
 - [FreeCodeCamp][1]
-- [Lucas Magnum: Linked List ADT/Datastructure - Medium][3]
 
 [1]: https://www.youtube.com/watch?v=RBSGKlAvoiM&t=364s
 [2]: https://en.wikipedia.org/wiki/List_(abstract_data_type)
 [3]: https://bit.ly/3sKxELR
+[4]: https://afteracademy.com/blog/types-of-linked-list-and-operation-on-linked-list
