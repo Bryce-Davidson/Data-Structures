@@ -1,6 +1,7 @@
 # Description
 
-These python singly_linked_list and doubly_linked_list lists are implementations of the ADT *(abstract data structure)* defined in the wikipedia article for **Lists**.
+These Java and Python implementations of the ADT *(abstract data type)* **List**
+
 ## Resources
 
 ---
