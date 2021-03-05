@@ -1,8 +1,6 @@
 # Data-Structures
 
-A repository of data structures for Java and Python.
-
-An abstract data type is a set of operations which access a collection of stored data.
+A repository of data structures for Java and Python. An abstract data type is a **set of operations** which access a *collection of stored data*. A datastructure is a concrete implementation of an abstract data type.
 
 ## Resources
 
