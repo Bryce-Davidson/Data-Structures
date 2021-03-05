@@ -102,9 +102,8 @@ class SinglyLinkedList:
         idx = 0
         curNode = self.head
         while curNode:
-            idx += 1
             # if the next node is to be deleted
-            if idx == i:
+            if idx+1 == i:
                 # if the node to be deleted is the tail
                 if curNode.next == self.tail:
                     curNode.next = None
@@ -114,6 +113,7 @@ class SinglyLinkedList:
                 curNode.next = curNode.next.next
                 return
             curNode = curNode.next
+            idx += 1
         raise IndexError("Index is out of bounds.")
 
     def __str__(self):
