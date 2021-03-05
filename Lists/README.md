@@ -40,12 +40,5 @@ Below are the extra operations defined on each specific implementation of the Li
 - [Linked List - After Academy][4]
 - [Lucas Magnum: Linked List ADT/Datastructure - Medium][3]
 
-## Global Resources
-
-- [Wikipedia - List ADT][2]
-- [FreeCodeCamp][1]
-
-[1]: https://www.youtube.com/watch?v=RBSGKlAvoiM&t=364s
-[2]: https://en.wikipedia.org/wiki/List_(abstract_data_type)
 [3]: https://bit.ly/3sKxELR
 [4]: https://afteracademy.com/blog/types-of-linked-list-and-operation-on-linked-list
