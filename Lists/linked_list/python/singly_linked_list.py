@@ -1,4 +1,6 @@
 #! /usr/bin/python3
+
+import testing.Dtest as Dtest
 class Node:
     def __init__(self, data):
         super().__init__()

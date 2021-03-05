@@ -4,7 +4,7 @@ A repository of data structures for Java and Python.
 
 ## Sequential Terms
 
-### [Abstract Data Type]
+### Abstract Data Type
 
 An [**abstract data type (ADT)**][2] is a *set of operations* which access a collection of stored data.
 
