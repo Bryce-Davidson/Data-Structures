@@ -2,6 +2,8 @@
 
 A repository of data structures for Java and Python.
 
+An abstract data type is a set of operations which access a collection of stored data.
+
 ## Resources
 
 Table of contents for the resources used in this repository. Big thanks to all!
