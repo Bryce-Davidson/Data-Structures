@@ -127,6 +127,7 @@ class SinglyLinkedList:
         s += "]"
         return s
 
+# Tests
 # ---------------------------------------------------------------------------
 
 def print_test(truth_value, test_description):
@@ -137,6 +138,13 @@ def print_test(truth_value, test_description):
         s += "FAIL"
     print(s)
 
+def print_ERR_test(truth_value, test_description):
+    s = "\t {:>22}]: ".format(test_description)
+    if truth_value:
+        s += "PASS"
+    else:
+        s += "FAIL"
+    print(s)
 
 def constructor_test():
     sll = SinglyLinkedList()
@@ -182,18 +190,12 @@ def get_by_index_test():
     sll.append(3)
     value = sll[1]
     print_test(value == 2, "get by index")
-
-def get_by_index_ERROR_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
     try:
-        value = sll[4]
+        value = sll[10]
     except IndexError:
-        print_test(True, "get by index: IndexError")
+        print_ERR_test(True, "IndexError")
         return
-    print_test(False, "get by index: IndexError")
+    print_ERR_test(False, "IndexError")
 
 
 def set_by_index_test():
@@ -256,8 +258,6 @@ def main():
     get_tail_test()
     get_by_index_test()
     
-    get_by_index_ERROR_test()
-
     set_by_index_test()
     find_by_value_test()
 
