@@ -59,7 +59,6 @@ class SinglyLinkedList:
                 curNode.next = None
                 return
             curNode = curNode.next
-        
     
     def pop_left(self):
         if self.is_empty():
@@ -92,14 +91,30 @@ class SinglyLinkedList:
         raise IndexError("Index is out of bounds.")
         
     def __delitem__(self, i):
-        temp = self.head
-        curNode = self.head
+        # empty
+        if self.is_empty():
+            raise IndexError(f'Cannot delete item for empty list.')
+        # one item
+        if self.head == self.tail:
+            self.head == None
+            self.tail == None
+        # more than one item
         idx = 0
+        curNode = self.head
         while curNode:
+            idx += 1
+            # if the next node is to be deleted
             if idx == i:
+                # if the node to be deleted is the tail
+                if curNode.next == self.tail:
+                    curNode.next = None
+                    self.tail = curNode
+                    return
+                # if in middle
+                curNode.next = curNode.next.next
                 return
             curNode = curNode.next
-            idx += 1
+        raise IndexError("Index is out of bounds.")
 
     def __str__(self):
         s = "["
@@ -214,7 +229,17 @@ def remove_at_end_test():
     print_test(str(sll) == "[1]", "pop")
 
 def remove_at_index_test():
-    return
+    sll = SinglyLinkedList()
+    sll.append(0)
+    sll.append(1)
+    sll.append(2)
+    sll.append(3)
+    del sll[2]
+    print_test(str(sll) == "[0, 1, 3]", "RAI - middle")
+    del sll[2]
+    print_test(str(sll) == "[0, 1]", "RAI - tail")
+    del sll[1]
+    print_test(str(sll) == "[0]", "RAI - head")
 
 def remove_by_value_test():
     return
