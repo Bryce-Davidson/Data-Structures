@@ -1,6 +1,4 @@
 #! /usr/bin/python3
-
-import testing.Dtest as Dtest
 class Node:
     def __init__(self, data):
         super().__init__()
@@ -14,6 +12,17 @@ class SinglyLinkedList:
 
     def is_empty(self):
         return not self.head and not self.tail
+
+    def to_list(self):
+        li = []
+        if self.is_empty():
+            raise IndexError("Cannot convert empty list to list.")
+            
+        curNode = self.head
+        while curNode:
+            li.append(curNode.data)
+            curNode = curNode.next
+        return li
 
     def append(self, data):
         newNode = Node(data)
@@ -128,85 +137,6 @@ class SinglyLinkedList:
             curNode = curNode.next
         s += "]"
         return s
-
-# Tests
-# ---------------------------------------------------------------------------
-
-def print_test(truth_value, test_description):
-    s = "Test [{:^25}]: ".format(test_description)
-    if truth_value:
-        s += "PASS"
-    else:
-        s += "FAIL"
-    print(s)
-
-def print_ERR_test(truth_value, test_description):
-    s = "\t {:>22}]: ".format(test_description)
-    if truth_value:
-        s += "PASS"
-    else:
-        s += "FAIL"
-    print(s)
-
-def constructor_test():
-    sll = SinglyLinkedList()
-    print_test(isinstance(sll, SinglyLinkedList), "constructor")
-    return
-
-def is_empty_test():
-    sll = SinglyLinkedList()
-    print_test(sll.is_empty(), "is empty")
-    return
-
-def prepend_test():
-    sll = SinglyLinkedList()
-    sll.push(1)
-    sll.push(2)
-    sll.push(3)
-    print_test(sll.__str__() == "[3, 2, 1]", "prepend")
-    return
-
-def append_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
-    print_test(sll.__str__() == "[1, 2, 3]", "append")
-    return
-
-def get_head_test():
-    sll = SinglyLinkedList()
-    head = sll.head
-    print_test(sll.head == head, "get head")
-
-def get_tail_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    tail = sll.get_tail()
-    print_test(sll.head.next == tail, "get tail")
-
-def get_by_index_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
-    value = sll[1]
-    print_test(value == 2, "get by index")
-    try:
-        value = sll[10]
-    except IndexError:
-        print_ERR_test(True, "IndexError")
-        return
-    print_ERR_test(False, "IndexError")
-
-
-def set_by_index_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
-    sll[1] = 42
-    print_test(sll[1] == 42, "set by index")
 
 def find_by_value_test():
     sll = SinglyLinkedList()
