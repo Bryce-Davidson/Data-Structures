@@ -31,6 +31,11 @@ class SinglyLinkedList:
         newNode.next = self.head
         self.head = newNode
 
+    def get_tail(self):
+        if self.is_empty():
+            raise IndexError("Empty list")
+        return self.head.next
+
     def find_by_value(self, value):
         if self.is_empty():
             raise KeyError(f'Cannot key empty list.')
@@ -123,10 +128,11 @@ def get_head_test():
     head = sll.head
     print_test(sll.head == head, "get head")
 
-# def get_tail_test():
-#     sll = SinglyLinkedList()
-#     tail = sll.tail
-#     print_test(sll.tail == tail, "get tail")
+def get_tail_test():
+    sll = SinglyLinkedList()
+    sll.append(1)
+    tail = sll.get_tail()
+    print_test(sll.head.next == tail, "get tail")
 
 def get_by_index_test():
     sll = SinglyLinkedList()
@@ -185,7 +191,7 @@ def main():
     prepend_test()
     append_test()
     get_head_test()
-    # get_tail_test()
+    get_tail_test()
     get_by_index_test()
     
     get_by_index_ERROR_test()
