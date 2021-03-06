@@ -4,15 +4,7 @@ from singly_linked_list import SinglyLinkedList
 import unittest
 
 class TestSingly(unittest.TestCase):
-
-    def test_constructor(self):
-        sll = SinglyLinkedList()
-        self.assertIsInstance(sll, SinglyLinkedList)
-
-    def test_is_empty(self):
-        sll = SinglyLinkedList()
-        self.assertTrue(sll.is_empty())
-
+    
     def test_to_list(self):
         sll = SinglyLinkedList()
         sll.append(1)
@@ -20,13 +12,17 @@ class TestSingly(unittest.TestCase):
         sll.append(3)
         self.assertListEqual(sll.to_list(), [1,2,3])
 
-    def test_append(self):
+    "(1) a constructor for creating an empty list"
+    def test_constructor(self):
         sll = SinglyLinkedList()
-        sll.append(1)
-        sll.append(2)
-        sll.append(3)
-        self.assertListEqual(sll.to_list(), [1,2,3])
+        self.assertIsInstance(sll, SinglyLinkedList)
+    
+    "(2) an operation for testing whether or not a list is empty"
+    def test_is_empty(self):
+        sll = SinglyLinkedList()
+        self.assertTrue(sll.is_empty())
 
+    "(3) an operation for prepending an entity to a list"
     def test_prepend(self):
         sll = SinglyLinkedList()
         sll.push(1)
@@ -34,17 +30,28 @@ class TestSingly(unittest.TestCase):
         sll.push(3)
         self.assertListEqual(sll.to_list(), [3,2,1])
     
+    "(4) an operation for appending an entity to a list"
+    def test_append(self):
+        sll = SinglyLinkedList()
+        sll.append(1)
+        sll.append(2)
+        sll.append(3)
+        self.assertListEqual(sll.to_list(), [1,2,3])
+    
+    "(5) an operation for determining the first component (or the 'head') of a list"
     def test_get_head(self):
         sll = SinglyLinkedList()
         head = sll.head
         self.assertIs(sll.head, head)
 
+    "(6) an operation for referring to the list consisting of all the components of a list except for its first (this is called the 'tail' of the list.)"
     def test_get_tail(self):
         sll = SinglyLinkedList()
         sll.append(1)
         tail = sll.get_tail()
         self.assertIs(sll.head.next, tail)
     
+    "(7) an operation for accessing the element at a given index"
     def test_get_by_index(self):
         sll = SinglyLinkedList()
         sll.append(1)
@@ -72,6 +79,30 @@ class TestSingly(unittest.TestCase):
         with self.assertRaises(IndexError):
             sll = SinglyLinkedList()
             sll[1] = 10
+
+    def test_find_by_value(self):
+        sll = SinglyLinkedList()
+        sll.append("Bar")
+        sll.append("James")
+        sll.append("Foo")
+        james = sll[1]
+        result = sll.find_by_value("James")
+        self.assertIs(james, result)
+
+    def test_remove_at_beggining(self):
+        sll = SinglyLinkedList()
+        sll.append(1)
+        sll.append(2)
+        sll.pop_left()
+        self.assertListEqual(sll.to_list(), [2])
+    
+    def test_remove_at_end(self):
+        sll = SinglyLinkedList()
+        sll.append(1)
+        sll.append(2)
+        sll.pop()
+        self.assertListEqual(sll.to_list(), [1])
+    
 
 if __name__ == "__main__":
     unittest.main()

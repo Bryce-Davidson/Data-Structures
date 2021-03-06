@@ -13,6 +13,7 @@ class SinglyLinkedList:
     def is_empty(self):
         return not self.head and not self.tail
 
+    "O(n)"
     def to_list(self):
         li = []
         if self.is_empty():
@@ -24,6 +25,7 @@ class SinglyLinkedList:
             curNode = curNode.next
         return li
 
+    "O(1)"
     def append(self, data):
         newNode = Node(data)
         if self.is_empty():
@@ -47,16 +49,6 @@ class SinglyLinkedList:
             raise IndexError("Empty list")
         return self.head.next
 
-    def find_by_value(self, value):
-        if self.is_empty():
-            raise KeyError(f'Cannot key empty list.')
-        curNode = self.head
-        while curNode:
-            if curNode.data == value:
-                return curNode.data
-            curNode = curNode.next
-        raise KeyError("Cannot find {value} in list.")
-
     def pop(self):
         if self.is_empty():
             raise IndexError("Cannot pop empty list.")
@@ -75,6 +67,16 @@ class SinglyLinkedList:
         if self.is_empty():
             raise IndexError("Cannot pop_left empty list.")
         self.head = self.head.next
+
+    def find_by_value(self, value):
+        if self.is_empty():
+            raise KeyError(f'Cannot key empty list.')
+        curNode = self.head
+        while curNode:
+            if curNode.data == value:
+                return curNode.data
+            curNode = curNode.next
+        raise KeyError("Cannot find {value} in list.")
 
     def __getitem__(self, i):  
         if self.is_empty():
@@ -137,30 +139,6 @@ class SinglyLinkedList:
             curNode = curNode.next
         s += "]"
         return s
-
-def find_by_value_test():
-    sll = SinglyLinkedList()
-    sll.append("Bar")
-    sll.append("James")
-    james = sll[1]
-    sll.append("Foo")
-    result = sll.find_by_value("James")
-    print_test(james is result, "find by value")
-    return
-
-def remove_at_beggining_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    sll.append(2)
-    sll.pop_left()
-    print_test(str(sll) == "[2]", "pop left")
-
-def remove_at_end_test():
-    sll = SinglyLinkedList()
-    sll.append(1)
-    sll.append(2)
-    sll.pop()
-    print_test(str(sll) == "[1]", "pop")
 
 def remove_at_index_test():
     sll = SinglyLinkedList()
