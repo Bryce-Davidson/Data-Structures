@@ -50,6 +50,10 @@ class TestSingly(unittest.TestCase):
         sll.append(1)
         tail = sll.get_tail()
         self.assertIs(sll.head.next, tail)
+
+        with self.assertRaises(IndexError):
+            sll = SinglyLinkedList()
+            sll.get_tail()
     
     "(7) an operation for accessing the element at a given index"
     def test_get_by_index(self):
@@ -103,6 +107,29 @@ class TestSingly(unittest.TestCase):
         sll.pop()
         self.assertListEqual(sll.to_list(), [1])
     
+    def test_remove_at_index(self):
+        sll = SinglyLinkedList()
+        
+        with self.assertRaises(IndexError):
+            # Delete on empty list
+            del sll[0]
+            # Delete index out of bounds
+            del sll[10]
+        
+        sll.append(0)
+        sll.append(1)
+        sll.append(2)
+        sll.append(3)
+        
+        # Delete middle node
+        del sll[2]
+        self.assertListEqual(sll.to_list(), [0,1,3])
+        
+        # Delete tail node
+        del sll[2]
+        self.assertListEqual(sll.to_list(), [0,1])
+
+
 
 if __name__ == "__main__":
     unittest.main()

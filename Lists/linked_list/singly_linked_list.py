@@ -16,9 +16,7 @@ class SinglyLinkedList:
     "O(n)"
     def to_list(self):
         li = []
-        if self.is_empty():
-            raise IndexError("Cannot convert empty list to list.")
-            
+
         curNode = self.head
         while curNode:
             li.append(curNode.data)
@@ -139,46 +137,3 @@ class SinglyLinkedList:
             curNode = curNode.next
         s += "]"
         return s
-
-def remove_at_index_test():
-    sll = SinglyLinkedList()
-    sll.append(0)
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
-    del sll[2]
-    print_test(str(sll) == "[0, 1, 3]", "RAI - middle")
-    del sll[2]
-    print_test(str(sll) == "[0, 1]", "RAI - tail")
-    del sll[1]
-    print_test(str(sll) == "[0]", "RAI - head")
-
-def remove_by_value_test():
-    return
-
-def reversal_of_list_test():
-    return
-
-def main():
-    constructor_test()
-    is_empty_test()
-    prepend_test()
-    append_test()
-    get_head_test()
-    get_tail_test()
-    get_by_index_test()
-    
-    set_by_index_test()
-    find_by_value_test()
-
-    remove_at_beggining_test()
-    remove_at_end_test()
-    remove_at_index_test()
-    remove_by_value_test()
-
-    reversal_of_list_test()
-
-    return
-
-if __name__ == '__main__':
-    main()
