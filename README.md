@@ -4,13 +4,17 @@ A repository of data structures for Python.
 
 ## Sequential Terms
 
-### Abstract Data Type
+### Abstract Data Type (ADT)
 
 An [**abstract data type (ADT)**][2] is a *set of operations* which access a collection of stored data.
 
 ### Data Structure
 
 A [**data structure**][4] is a concrete implementation of an abstract data type.
+
+## Big-O Notation
+
+For each specific ADT implementation I will provide a description of the time complexity for each operation of the ADT within the docstring of the operation.
 
 ## Code Style
 
@@ -20,7 +24,7 @@ I have changed this "two space rule" in the [pylintrc](.pylintrc) on line 295 - 
 
 ## Resources
 
-List of resources used in this repository.
+List of global resources used in this repository.
 
 Big thanks to all!
 

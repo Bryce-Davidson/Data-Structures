@@ -4,7 +4,6 @@ class Node:
         super().__init__()
         self.data = data
         self.next = None
-
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
