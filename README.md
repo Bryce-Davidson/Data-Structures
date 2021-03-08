@@ -12,10 +12,11 @@ An [**abstract data type (ADT)**][2] is a *set of operations* which access a col
 
 A [**datastructure**][4] is a concrete implementation of an abstract data type.
 
-
 #### Code Style
 
-All code written will be written with as close regard to the [Google Python Style Guide][5].
+All code will be written with close regard to the [Google Python Style Guide][5] with the exception of the 2 space rule for any indented line.
+
+I have changes this in the [pylintrc](.pylintrc) on line 295 - `indent-string='    '`
 
 ## Resources
 

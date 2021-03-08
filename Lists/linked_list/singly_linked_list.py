@@ -26,7 +26,7 @@ class SinglyLinkedList:
         if self.is_empty():
             self.head = new_node
             self.tail = new_node
-            return  
+            return
         self.tail.next = new_node
         self.tail = new_node
 
@@ -97,7 +97,7 @@ class SinglyLinkedList:
             cur_node = cur_node.next
             idx += 1
         raise IndexError("Index is out of bounds.")
-      
+
     def __delitem__(self, i):
         # empty
         if self.is_empty():

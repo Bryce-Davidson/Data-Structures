@@ -1,8 +1,8 @@
 # Description
 
-These Python implementations of the ADT *(abstract data type)* **List**, are written to the standards shown on the wikipedia page below.
+These Python implementations of the abstract data type **List**, are written to the standards shown on the wikipedia page below.
 
-Along with these standards, each list ADT implementation will have specific operations defined below.
+Along with these standards, each list ADT implementation will have additional  operations defined on for their implementation [listed below](#implementations).
 
 ## Each Implementation of List
 
@@ -16,7 +16,7 @@ Along with these standards, each list ADT implementation will have specific oper
 
 ## Implementations
 
-Below are the extra operations defined on each specific implementation of the List ADT.
+Below are the additional operations defined on each specific implementation of the List ADT.
 
 ### Linked Lists
 
