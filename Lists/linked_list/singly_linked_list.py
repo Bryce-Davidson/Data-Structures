@@ -13,34 +13,31 @@ class SinglyLinkedList:
     def is_empty(self):
         return not self.head and not self.tail
 
-    "O(n)"
     def to_list(self):
         li = []
-
-        curNode = self.head
-        while curNode:
-            li.append(curNode.data)
-            curNode = curNode.next
+        cur_node = self.head
+        while cur_node:
+            li.append(cur_node.data)
+            cur_node = cur_node.next
         return li
 
-    "O(1)"
     def append(self, data):
-        newNode = Node(data)
+        new_node = Node(data)
         if self.is_empty():
-            self.head = newNode
-            self.tail = newNode
-            return
-        self.tail.next = newNode
-        self.tail = newNode
-    
+            self.head = new_node
+            self.tail = new_node
+            return  
+        self.tail.next = new_node
+        self.tail = new_node
+
     def push(self, data):
-        newNode = Node(data)
+        new_node = Node(data)
         if self.is_empty():
-            self.head = newNode
-            self.tail = newNode
+            self.head = new_node
+            self.tail = new_node
             return
-        newNode.next = self.head
-        self.head = newNode
+        new_node.next = self.head
+        self.head = new_node
 
     def get_tail(self):
         if self.is_empty():
@@ -50,17 +47,17 @@ class SinglyLinkedList:
     def pop(self):
         if self.is_empty():
             raise IndexError("Cannot pop empty list.")
-        curNode = self.head
-        if curNode == self.tail:
+        cur_node = self.head
+        if cur_node == self.tail:
             self.head = None
             self.tail = None
             return
-        while curNode:
-            if curNode.next == self.tail:
-                curNode.next = None
+        while cur_node:
+            if cur_node.next == self.tail:
+                cur_node.next = None
                 return
-            curNode = curNode.next
-    
+        cur_node = cur_node.next
+
     def pop_left(self):
         if self.is_empty():
             raise IndexError("Cannot pop_left empty list.")
@@ -68,72 +65,72 @@ class SinglyLinkedList:
 
     def find_by_value(self, value):
         if self.is_empty():
-            raise KeyError(f'Cannot key empty list.')
-        curNode = self.head
-        while curNode:
-            if curNode.data == value:
-                return curNode.data
-            curNode = curNode.next
+            raise KeyError("Empty list.")
+        cur_node = self.head
+        while cur_node:
+            if cur_node.data == value:
+                return cur_node.data
+            cur_node = cur_node.next
         raise KeyError("Cannot find {value} in list.")
 
     def __getitem__(self, i):  
         if self.is_empty():
-            raise IndexError(f'Cannot index empty list.')
-        curNode = self.head
+            raise IndexError("Cannot index empty list.")
+        cur_node = self.head
         idx = 0
-        while curNode:
+        while cur_node:
             if idx == i:
-                return curNode.data
-            curNode = curNode.next
+                return cur_node.data
+            cur_node = cur_node.next
             idx += 1
         raise IndexError("Index is out of bounds.")
 
     def __setitem__(self, i, value):
         if self.is_empty():
-            raise IndexError(f'Cannot set item for empty list.')
-        curNode = self.head
+            raise IndexError("Cannot set item for empty list.")
+        cur_node = self.head
         idx = 0
-        while curNode:
+        while cur_node:
             if idx == i:
-                curNode.data = value
+                cur_node.data = value
                 return
-            curNode = curNode.next
+            cur_node = cur_node.next
             idx += 1
         raise IndexError("Index is out of bounds.")
-        
+      
     def __delitem__(self, i):
         # empty
         if self.is_empty():
-            raise IndexError(f'Cannot delete item for empty list.')
+            raise IndexError("Cannot delete item for empty list.")
         # one item
         if self.head == self.tail:
-            self.head == None
-            self.tail == None
+            self.head = None
+            self.tail = None
         # more than one item
         idx = 0
-        curNode = self.head
-        while curNode:
+        cur_node = self.head
+        while cur_node:
             # if the next node is to be deleted
             if idx+1 == i:
                 # if the node to be deleted is the tail
-                if curNode.next == self.tail:
-                    curNode.next = None
-                    self.tail = curNode
+                if cur_node.next == self.tail:
+                    cur_node.next = None
+                    self.tail = cur_node
                     return
                 # if in middle
-                curNode.next = curNode.next.next
+                cur_node.next = cur_node.next.next
                 return
-            curNode = curNode.next
+            cur_node = cur_node.next
             idx += 1
         raise IndexError("Index is out of bounds.")
 
     def __str__(self):
         s = "["
-        curNode = self.head
-        while curNode:
-            s += str(curNode.data)
-            if curNode.next:
+        cur_node = self.head
+        while cur_node:
+            s += str(cur_node.data)
+            if cur_node.next:
                 s += ", "
-            curNode = curNode.next
+            cur_node = cur_node.next
         s += "]"
         return s

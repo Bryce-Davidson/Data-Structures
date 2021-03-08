@@ -12,6 +12,11 @@ An [**abstract data type (ADT)**][2] is a *set of operations* which access a col
 
 A [**datastructure**][4] is a concrete implementation of an abstract data type.
 
+
+#### Code Style
+
+All code written will be written with as close regard to the [Google Python Style Guide][5].
+
 ## Resources
 
 List of resources used in this repository.
@@ -28,3 +33,4 @@ Big thanks to all!
 [2]: https://en.wikipedia.org/wiki/Abstract_data_type
 [3]: https://cooervo.github.io/Algorithms-DataStructures-BigONotation/index.html
 [4]: https://en.wikipedia.org/wiki/Data_structure
+[5]: https://google.github.io/styleguide/pyguide.html
