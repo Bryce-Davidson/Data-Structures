@@ -1,8 +1,6 @@
-#! /usr/bin/python3
-
-from Lists.linked_list.singly_linked_list import SinglyLinkedList
-# from Lists.linked_list.singly_linked_list import SinglyLinkedList
+from Lists.linked_list.singly_linked_list import SinglyLinkedList, Node
 import unittest
+import logging
 
 class TestSingly(unittest.TestCase):
 
@@ -67,9 +65,11 @@ class TestSingly(unittest.TestCase):
         value = sll[1]
         self.assertEqual(value, 2)
 
+        # Empty list error
         with self.assertRaises(IndexError):
             value = sll[10]
 
+        # Index out of bounds error
         with self.assertRaises(IndexError):
             sll = SinglyLinkedList()
             value = sll[1]
@@ -90,6 +90,11 @@ class TestSingly(unittest.TestCase):
 
     def test_find_by_value(self):
         sll = SinglyLinkedList()
+
+        # Empty list test
+        with self.assertRaises(KeyError):
+            sll.find_by_value("foo")
+
         sll.append("Bar")
         sll.append("James")
         sll.append("Foo")
@@ -97,18 +102,26 @@ class TestSingly(unittest.TestCase):
         result = sll.find_by_value("James")
         self.assertIs(james, result)
 
-    def test_remove_at_beggining(self):
+        # Cannot find value test
+        with self.assertRaises(KeyError):
+            result = sll.find_by_value("not in list")
+
+    def test_pop_left(self):
         sll = SinglyLinkedList()
         sll.append(1)
         sll.append(2)
-        sll.pop_left()
+        node = sll.pop_left()
+        self.assertIsInstance(node, Node)
+        self.assertEqual(node.data, 1)
         self.assertListEqual(sll.to_list(), [2])
 
-    def test_remove_at_end(self):
+    def test_pop(self):
         sll = SinglyLinkedList()
         sll.append(1)
         sll.append(2)
-        sll.pop()
+        node = sll.pop()
+        self.assertIsInstance(node, Node)
+        self.assertEqual(node.data, 2)
         self.assertListEqual(sll.to_list(), [1])
 
     def test_remove_at_index(self):
