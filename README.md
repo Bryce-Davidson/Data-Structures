@@ -26,17 +26,17 @@ For each data structure, I will provide a description for both the [time complex
 
 ### Resources on Big-O Notation
 
-<span style="color:gray">Both time complexity and space complexity use big-o notation</span>.
+Both time complexity and space complexity use big-o notation.
 
 These are the **best** resources I have compiled for learning about Big-O notation.
 
 ##### Time Complexity
 
-1. [Video | CS Dojo | Introduction to Big O Notation and Time Complexity (Data Structures & Algorithms #7)][6]
+[Video | CS Dojo | Introduction to Big O Notation and Time Complexity (Data Structures & Algorithms #7)][6]
 
 ##### Space Complexity
 
-2. [Video | KodingKevin | Big O Notation: Space Complexity][9]
+[Video | KodingKevin | Big O Notation: Space Complexity][9]
 
 ## Code Style
 
@@ -48,7 +48,7 @@ I have changed this "two space rule" in the [pylintrc](.pylintrc) on line 295 - 
 
 List of global resources used in this repository.
 
-🎉 Big thanks to all! 🎉
+🎉  Big thanks to all! 🎉
 
 ### General
 
