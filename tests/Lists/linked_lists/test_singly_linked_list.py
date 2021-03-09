@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 
-from singly_linked_list import SinglyLinkedList
+from Lists.linked_list.singly_linked_list import SinglyLinkedList
+# from Lists.linked_list.singly_linked_list import SinglyLinkedList
 import unittest
 
 class TestSingly(unittest.TestCase):
