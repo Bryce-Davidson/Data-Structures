@@ -190,8 +190,8 @@ class SinglyLinkedList:
         Returns: None
 
         Raises:
-            IndexError: Cannot index empty list.
-            IndexError: Index is out of bounds
+            IndexError: cannot index empty list.
+            IndexError: index is out of bounds
         """
         if self.is_empty():
             raise IndexError("Cannot set item for empty list.")
@@ -215,7 +215,7 @@ class SinglyLinkedList:
 
         Raises:
             IndexError: empty list
-            IndexError: empty list
+            IndexError: index is out of bounds
         """
         # empty
         if self.is_empty():
