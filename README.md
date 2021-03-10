@@ -1,6 +1,6 @@
 # Data-Structures
 
-A repository of data structures for Python. 
+A repository of data structures for Python.
 
 ## Sequential Terms
 

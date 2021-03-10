@@ -32,19 +32,19 @@ class DNode:
     def prev(self, d_node):
         if not isinstance(d_node, DNode):
             raise ValueError(f"Argument '{d_node}'"
-                              "is not an instance of D_Node().")
+                              "is not an instance of DNode().")
         self.__prev = d_node
 
     @property
     def next(self):
-        """the next D_Node reference"""
+        """the next DNode reference"""
         return self.__next
 
     @next.setter
     def next(self, d_node):
         if not isinstance(d_node, DNode):
             raise ValueError(f"Argument '{d_node}'"
-                              "is not an instance of D_Node().")
+                              "is not an instance of DNode().")
         self.__next = d_node
 
 
@@ -52,6 +52,14 @@ class DoublyLinkedList:
     def __init__(self):
         self.__head = None
         self.__tail = None
+
+    @property
+    def head(self):
+        return self.__head
+
+    @property
+    def tail(self):
+        return self.__tail
 
     def is_empty(self):
         """Indicates if the list is empty
@@ -65,13 +73,13 @@ class DoublyLinkedList:
         return not self.__head and not self.__tail
 
     def to_list(self):
-        """Constructs a python list object out of the singly linked list
+        """Constructs a python list object out of the doubly linked list
 
         time:  O(n)
         space: O(n)
 
         Returns: list
-            A list representation of the singly linked list's data
+            A list representation of the doubly linked list's data
         """
         li = []
         cur_node = self.__head
@@ -81,7 +89,7 @@ class DoublyLinkedList:
         return li
 
     def append(self, data):
-        """Appends a new piece of data onto the end of the list
+        """Appends a new piece of data to the list
 
         time:  O(1)
         space: O(1)
@@ -91,11 +99,12 @@ class DoublyLinkedList:
             self.__head = new_node
             self.__tail = new_node
             return
+        new_node.prev = self.__tail
         self.__tail.next = new_node
         self.__tail = new_node
 
     def push(self, data):
-        """Prepends a new piece of data onto the beggining of the list
+        """Prepends a new piece of data to the list
 
         time:  O(1)
         space: O(1)
@@ -105,6 +114,7 @@ class DoublyLinkedList:
             self.__head = new_node
             self.__tail = new_node
             return
+        self.__head.prev = new_node
         new_node.next = self.__head
         self.__head = new_node
 
@@ -224,8 +234,6 @@ class DoublyLinkedList:
         time:  O(n)
         space: O(1)
 
-        Returns: None
-
         Raises:
             IndexError: cannot index empty list.
             IndexError: index is out of bounds
@@ -249,8 +257,6 @@ class DoublyLinkedList:
 
         time:  O(n)
         space: O(1)
-
-        Returns: None
 
         Raises:
             IndexError: empty list
