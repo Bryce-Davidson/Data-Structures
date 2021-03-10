@@ -52,8 +52,6 @@ class SinglyLinkedList:
 
         time:  O(1)
         space: O(1)
-
-        Returns: None
         """
         new_node = Node(data)
         if self.is_empty():
@@ -68,8 +66,6 @@ class SinglyLinkedList:
 
         time:  O(1)
         space: O(1)
-
-        Returns: None
         """
         new_node = Node(data)
         if self.is_empty():
@@ -195,8 +191,6 @@ class SinglyLinkedList:
         time:  O(n)
         space: O(1)
 
-        Returns: None
-
         Raises:
             IndexError: cannot index empty list.
             IndexError: index is out of bounds
@@ -220,8 +214,6 @@ class SinglyLinkedList:
 
         time:  O(n)
         space: O(1)
-
-        Returns: None
 
         Raises:
             IndexError: empty list
