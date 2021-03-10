@@ -22,7 +22,7 @@ How much **memory (RAM)** we need as the inputs to the operation get larger.
 
 ## Big-O Notation
 
-For each data structure, I will provide a description for both the [time complexity][7] and the [space complexity][8] on each operation acting on the data structure within the documentation string of the operation.
+For each data structure, I will provide a description for both the [time complexity][7] and the [space complexity][8] on each operation acting on the data structure within the documentation string for the operation.
 
 ### Resources on Big-O Notation
 
