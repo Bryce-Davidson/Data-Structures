@@ -164,7 +164,7 @@ class SinglyLinkedList:
         raise KeyError("Cannot find {} in list.".format(value))
 
     def __getitem__(self, i):
-        """Finds a Node in the list by an index given
+        """Finds a Node in the list on an index given
 
         time:  O(n)
         space: O(1)
@@ -180,8 +180,8 @@ class SinglyLinkedList:
         if self.is_empty():
             raise IndexError("Cannot index empty list.")
 
-        cur_node = self.head
         idx = 0
+        cur_node = self.head
         while cur_node:
             if idx == i:
                 return cur_node.data
@@ -190,7 +190,7 @@ class SinglyLinkedList:
         raise IndexError("Index is out of bounds.")
 
     def __setitem__(self, i, value):
-        """Sets a Node's data in the list by an index given
+        """Sets a Node's data in the list on an index given
 
         time:  O(n)
         space: O(1)
