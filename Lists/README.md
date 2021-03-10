@@ -28,7 +28,7 @@ Below are the additional operations defined on each specific implementation of t
 
 - [x] Find by value
 - [x] Update by value
-- [x] Remove at beggining
+- [x] Remove at beginning
 - [x] Remove at end
 - [x] Remove at index
 - [x] Remove by value

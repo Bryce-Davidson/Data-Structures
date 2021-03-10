@@ -1,9 +1,15 @@
 class Node:
+    """A Node object to use in a singly linked list.
+
+    Attributes:
+        data: the data within the node
+        next: the next Node object in the list
+    """
     def __init__(self, data):
         self.data = data
         self.next = None
 class SinglyLinkedList:
-    """A singly linked list data structure
+    """A singly linked list data structure.
 
     Attributes:
         head: a Node object representing the first element in the list
@@ -32,7 +38,7 @@ class SinglyLinkedList:
         space: O(n)
 
         Returns: list
-            A list representation of the singly linked list
+            A list representation of the singly linked list's data
         """
         li = []
         cur_node = self.head
@@ -170,8 +176,10 @@ class SinglyLinkedList:
             IndexError: empty list
             IndexError: index is out of bounds
         """
+
         if self.is_empty():
             raise IndexError("Cannot index empty list.")
+
         cur_node = self.head
         idx = 0
         while cur_node:
@@ -195,6 +203,7 @@ class SinglyLinkedList:
         """
         if self.is_empty():
             raise IndexError("Cannot set item for empty list.")
+
         cur_node = self.head
         idx = 0
         while cur_node:
@@ -203,6 +212,7 @@ class SinglyLinkedList:
                 return
             cur_node = cur_node.next
             idx += 1
+
         raise IndexError("Index is out of bounds.")
 
     def __delitem__(self, i):
@@ -217,14 +227,22 @@ class SinglyLinkedList:
             IndexError: empty list
             IndexError: index is out of bounds
         """
-        # empty
+        # Empty
         if self.is_empty():
             raise IndexError("Cannot delete item on empty list.")
-        # one item
+        # One item
         if self.head == self.tail:
             self.head = None
             self.tail = None
-        # more than one item
+
+        # More than one item
+
+        # If first item
+        # Error will not be thrown here from pop as the list is not empty
+        if i == 0:
+            self.pop_left()
+            return
+
         idx = 0
         cur_node = self.head
         while cur_node:

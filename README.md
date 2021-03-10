@@ -14,7 +14,7 @@ A [**data structure**][4] is a concrete implementation of an abstract data type.
 
 ### Time Complexity
 
-How much **runtime** do need as the inputs to operation get larger.
+How much **runtime** we need as the inputs to operation get larger.
 
 ### Space Complexity
 
@@ -26,7 +26,7 @@ For each data structure, I will provide a description for both the [time complex
 
 ### Resources on Big-O Notation
 
-Both time complexity and space complexity use big-o notation.
+Both time complexity and space complexity use Big-O notation.
 
 These are the **best** resources I have compiled for learning about Big-O notation.
 
@@ -48,7 +48,7 @@ I have changed this "two space rule" in the [pylintrc](.pylintrc) on line 295 - 
 
 List of global resources used in this repository.
 
-🎉  Big thanks to all! 🎉
+🎉 Big thanks to all! 🎉
 
 ### General
 

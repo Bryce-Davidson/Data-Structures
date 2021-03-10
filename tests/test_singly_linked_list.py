@@ -1,6 +1,5 @@
 from Lists.linked_list.singly_linked_list import SinglyLinkedList, Node
 import unittest
-import logging
 
 class TestSingly(unittest.TestCase):
 
@@ -53,6 +52,7 @@ class TestSingly(unittest.TestCase):
         tail = sll.get_tail()
         self.assertIs(sll.head.next, tail)
 
+        # Empty list
         with self.assertRaises(IndexError):
             sll = SinglyLinkedList()
             sll.get_tail()
@@ -145,6 +145,10 @@ class TestSingly(unittest.TestCase):
         # Delete tail node
         del sll[2]
         self.assertListEqual(sll.to_list(), [0,1])
+
+        # Delete first node
+        del sll[0]
+        self.assertListEqual(sll.to_list(), [1])
 
 
 
