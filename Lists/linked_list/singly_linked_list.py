@@ -226,6 +226,11 @@ class SinglyLinkedList:
         if self.is_empty():
             raise IndexError("Cannot delete item on empty list.")
 
+        # 1 Node
+        if self.head is self.tail:
+            self.head = None
+            self.tail = None
+
         cur_node = self.head
         prev_node = None
         for _ in repeat(None, i):
@@ -233,10 +238,17 @@ class SinglyLinkedList:
                 raise IndexError("Index is out of bounds")
             prev_node = cur_node
             cur_node = cur_node.next
-        
+
         # First node
+        if prev_node is None:
+            self.head = self.head.next
+            return
         # Tail node
-        # Middle node
+        if cur_node is self.tail:
+            self.tail = prev_node
+
+        prev_node.next = cur_node.next
+
 
 
 

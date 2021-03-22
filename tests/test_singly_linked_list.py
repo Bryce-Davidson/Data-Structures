@@ -140,6 +140,7 @@ class TestSingly(unittest.TestCase):
         with self.assertRaises(IndexError):
             # Out of bounds
             del sll[10]
+
         # Delete middle node
         del sll[2]
         self.assertListEqual(sll.to_list(), [0,1,3])
@@ -147,10 +148,13 @@ class TestSingly(unittest.TestCase):
         # Delete tail node
         del sll[2]
         self.assertListEqual(sll.to_list(), [0,1])
+        self.assertEqual(sll.tail.data, 1)
 
         # Delete first node
         del sll[0]
         self.assertListEqual(sll.to_list(), [1])
+        self.assertEqual(sll.head.data, 1)
+        self.assertEqual(sll.tail.data, 1)
 
 
 
