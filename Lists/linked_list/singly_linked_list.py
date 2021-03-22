@@ -223,34 +223,31 @@ class SinglyLinkedList:
         # Empty
         if self.is_empty():
             raise IndexError("Cannot delete item on empty list.")
+ 
         # One item
         if self.head.next is None:
             self.head = None
             self.tail = None
-
-        # More than one item
+            return
 
         # If first item
-        # Error will not be thrown here from pop as the list is not empty
         if i == 0:
             self.head = self.head.next
             return
 
-        cur_node = self.head
-        for idx in range(i):
-            # if the next node is to be deleted
-            if idx+1 == i:
-                # if the node to be deleted is the tail
-                if cur_node.next == self.tail:
-                    cur_node.next = None
-                    self.tail = cur_node
+        # More Than One
+        temp_node = self.head.next
+        prev_node = self.head
+        for idx in range(1, i+1):
+            if idx == i:
+                if temp_node is self.tail:
+                    prev_node.next = None
                     return
-                # if in middle
-                cur_node.next = cur_node.next.next
+                prev_node.next = temp_node.next
                 return
-            cur_node = cur_node.next
-            idx += 1
-        raise IndexError("Index is out of bounds.")
+            temp_node = temp_node.next
+            prev_node = prev_node.next
+        raise IndexError("Index is out of bounds")
 
     def __str__(self):
         s = "["
