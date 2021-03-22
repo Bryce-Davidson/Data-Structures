@@ -200,13 +200,13 @@ class SinglyLinkedList:
             raise IndexError("Cannot set item for empty list.")
 
         cur_node = self.head
-        idx = 0
-        while cur_node:
+        for idx in range(i+1):
+            if cur_node is None:
+                break
             if idx == i:
                 cur_node.data = value
                 return
             cur_node = cur_node.next
-            idx += 1
 
         raise IndexError("Index is out of bounds.")
 
