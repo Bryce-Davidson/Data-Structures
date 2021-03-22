@@ -230,7 +230,7 @@ class SinglyLinkedList:
             self.tail = None
             return
 
-        # If first item
+        # first item
         if i == 0:
             self.head = self.head.next
             return
@@ -240,6 +240,7 @@ class SinglyLinkedList:
         prev_node = self.head
         for idx in range(1, i+1):
             if idx == i:
+                # Last item
                 if temp_node is self.tail:
                     prev_node.next = None
                     return
