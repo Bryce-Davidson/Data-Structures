@@ -177,13 +177,13 @@ class SinglyLinkedList:
         if self.is_empty():
             raise IndexError("Cannot index empty list.")
 
-        idx = 0
         cur_node = self.head
-        while cur_node:
+        for idx in range(i+1):
+            if cur_node is None:
+                break
             if idx == i:
                 return cur_node.data
             cur_node = cur_node.next
-            idx += 1
         raise IndexError("Index is out of bounds.")
 
     def __setitem__(self, i, value):
