@@ -1,3 +1,5 @@
+from itertools import repeat
+
 class Node:
     """A Node object to use in a singly linked list.
 
@@ -223,32 +225,20 @@ class SinglyLinkedList:
         # Empty
         if self.is_empty():
             raise IndexError("Cannot delete item on empty list.")
- 
-        # One item
-        if self.head.next is None:
-            self.head = None
-            self.tail = None
-            return
 
-        # first item
-        if i == 0:
-            self.head = self.head.next
-            return
+        cur_node = self.head
+        prev_node = None
+        for _ in repeat(None, i):
+            if cur_node is None:
+                raise IndexError("Index is out of bounds")
+            prev_node = cur_node
+            cur_node = cur_node.next
+        
+        # First node
+        # Tail node
+        # Middle node
 
-        # More Than One
-        temp_node = self.head.next
-        prev_node = self.head
-        for idx in range(1, i+1):
-            if idx == i:
-                # Last item
-                if temp_node is self.tail:
-                    prev_node.next = None
-                    return
-                prev_node.next = temp_node.next
-                return
-            temp_node = temp_node.next
-            prev_node = prev_node.next
-        raise IndexError("Index is out of bounds")
+
 
     def __str__(self):
         s = "["

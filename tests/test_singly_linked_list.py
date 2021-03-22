@@ -130,14 +130,16 @@ class TestSingly(unittest.TestCase):
         with self.assertRaises(IndexError):
             # Delete on empty list
             del sll[0]
-            # Delete index out of bounds
-            del sll[10]
+
 
         sll.append(0)
         sll.append(1)
         sll.append(2)
         sll.append(3)
 
+        with self.assertRaises(IndexError):
+            # Out of bounds
+            del sll[10]
         # Delete middle node
         del sll[2]
         self.assertListEqual(sll.to_list(), [0,1,3])
