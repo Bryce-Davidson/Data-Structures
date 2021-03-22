@@ -8,6 +8,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 class SinglyLinkedList:
     """A singly linked list data structure.
 
@@ -223,7 +224,7 @@ class SinglyLinkedList:
         if self.is_empty():
             raise IndexError("Cannot delete item on empty list.")
         # One item
-        if self.head == self.tail:
+        if self.head.next is None:
             self.head = None
             self.tail = None
 
@@ -232,12 +233,11 @@ class SinglyLinkedList:
         # If first item
         # Error will not be thrown here from pop as the list is not empty
         if i == 0:
-            self.pop_left()
+            self.head = self.head.next
             return
 
-        idx = 0
         cur_node = self.head
-        while cur_node:
+        for idx in range(i):
             # if the next node is to be deleted
             if idx+1 == i:
                 # if the node to be deleted is the tail
